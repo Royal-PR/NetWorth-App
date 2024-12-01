@@ -1,9 +1,20 @@
-table_headings = ["Accounts","Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+import csv
 
-rows = [["Barclays Checking", "100", "150","200"],
-        ["Barclays Saving", "500", "150", "130"],
-        ["MoneyBox LISA", "500", "150", "50"]]
+def get_row():
+    with open("rows.csv", "r", newline="") as file:
+        reader = csv.reader(file)
+        data = []
+        for row in reader:
+            data.append(row)
+        return data
 
-jan_total =sum(int(item[1]) for item in rows)
+print(get_row())
 
-print(jan_total)
+
+def write_heading(new_heading):
+    with open("headings.csv", "a+", newline="") as file:
+        headings = csv.reader(file)
+        headings.append(new_heading)
+        headings.
+
+write_heading("Mar")
